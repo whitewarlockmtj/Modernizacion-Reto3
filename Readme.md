@@ -38,4 +38,7 @@ kubectl port-forward svc/product-service -n default 3000:80
 
 Con eso se puede validar el servicio
 
+Repositorio
+https://github.com/whitewarlockmtj/Modernizacion-Reto3
+
 
