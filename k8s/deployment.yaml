@@ -76,4 +76,4 @@ spec:
           periodSeconds: 10
           timeoutSeconds: 5
           failureThreshold: 3
-      imagePullPolicy: Always
+      #imagePullPolicy: Always
