@@ -14,5 +14,19 @@ kubectl port-forward svc/argocd-server -n argocd 8080:443
 3. Obtener el password de argocd
 kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d
 
+4. Crear el repositorio
+
+5. En el repositorio ingresar las credenciales del docker hub en Settings / Secrets And Variables / Actions, luego New Repository Secret.
+
+6. En argocd, crear la conexión al repositorio, se dirigen a Settings / Repository, luego Connect Repo.
+Seleccionar Via HTTPS
+Selecctionar Type Git
+Colocar un nombre 
+Copiar la ruta del repositorio, Ejemplo: https://github.com/whitewarlockmtj/Modernizacion-Reto3.git
+Seleccionar Connect
+
+7. Ejecutar el despliegue
+kubectl apply -f argocd-application.yaml
+
 
 
