@@ -1,4 +1,6 @@
 #ArgoCD#
+El Proyecto muestra un proceso de CI/CD utilizando ArgoCD, Kustomize y GitHub. 
+
 
 1. Iniciar postgres
 helm install postgresql bitnami/postgresql --set auth.postgresPassword=postgres --set auth.database=products --set persistence.size=20Gi
@@ -28,5 +30,12 @@ Seleccionar Connect
 7. Ejecutar el despliegue
 kubectl apply -f argocd-application.yaml
 
+8. Ver en que puerto esta el servicio
+kubectl get all -n default
+
+9. Realizar el port forward para ver el servicio
+kubectl port-forward svc/product-service -n default 3000:80
+
+Con eso se puede validar el servicio
 
 
